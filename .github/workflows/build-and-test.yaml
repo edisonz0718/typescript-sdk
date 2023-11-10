@@ -2,28 +2,21 @@ name: Build and Test
 
 on:
   workflow_call:
-    inputs:
-      api_base_url:
+    secrets:
+      API_BASE_URL:
         required: true
-        type: secret
-      franchise_registry_contract:
+      FRANCHISE_REGISTRY_CONTRACT:
         required: true
-        type: secret
-      relationship_module_contract:
+      RELATIONSHIP_MODULE_CONTRACT:
         required: true
-        type: secret
-      licensing_module_contract:
+      LICENSING_MODULE_CONTRACT:
         required: true
-        type: secret
-      collect_module_contract:
+      COLLECT_MODULE_CONTRACT:
         required: true
-        type: secret
-      rpc_provider_url:
+      RPC_PROVIDER_URL:
         required: true
-        type: secret
-      wallet_private_key:
+      WALLET_PRIVATE_KEY:
         required: true
-        type: secret
 
 jobs:
   build:
@@ -35,13 +28,13 @@ jobs:
       ## To use Remote Caching, uncomment the next lines and follow the steps below.
       # TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       # TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-      API_BASE_URL: ${{ inputs.api_base_url }}
-      FRANCHISE_REGISTRY_CONTRACT: ${{ inputs.franchise_registry_contract }}
-      RELATIONSHIP_MODULE_CONTRACT: ${{ inputs.relationship_module_contract }}
-      LICENSING_MODULE_CONTRACT: ${{ inputs.licensing_module_contract }}
-      COLLECT_MODULE_CONTRACT: ${{ inputs.collect_module_contract }}
-      RPC_PROVIDER_URL: ${{ inputs.rpc_provider_url }}
-      WALLET_PRIVATE_KEY: ${{ inputs.wallet_private_key }}
+      API_BASE_URL: ${{ secrets.API_BASE_URL }}
+      FRANCHISE_REGISTRY_CONTRACT: ${{ secrets.FRANCHISE_REGISTRY_CONTRACT }}
+      RELATIONSHIP_MODULE_CONTRACT: ${{ secrets.RELATIONSHIP_MODULE_CONTRACT }}
+      LICENSING_MODULE_CONTRACT: ${{ secrets.LICENSING_MODULE_CONTRACT }}
+      COLLECT_MODULE_CONTRACT: ${{ secrets.COLLECT_MODULE_CONTRACT }}
+      RPC_PROVIDER_URL: ${{ secrets.RPC_PROVIDER_URL }}
+      WALLET_PRIVATE_KEY: ${{ secrets.WALLET_PRIVATE_KEY }}
 
     steps:
       - name: Check out code

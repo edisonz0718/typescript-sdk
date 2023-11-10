@@ -15,9 +15,9 @@ jobs:
     uses: ./.github/workflows/build-and-test.yaml 
     secrets:
       api_base_url: ${{ secrets.API_BASE_URL }} 
-      franchise_registry_contract: ${{ secrets.FRANCHISE_REGISTRY_CONTRACT }}
-      relationship_module_contract: ${{ secrets.RELATIONSHIP_MODULE_CONTRACT }}
-      licensing_module_contract: ${{ secrets.LICENSING_MODULE_CONTRACT }}
-      collect_module_contract: ${{ secrets.COLLECT_MODULE_CONTRACT }}
-      rpc_provider_url: ${{ secrets.RPC_PROVIDER_URL }}
-      wallet_private_key: ${{ secrets.WALLET_PRIVATE_KEY }}
+      FRANCHISE_REGISTRY_CONTRACT: ${{ secrets.FRANCHISE_REGISTRY_CONTRACT }}
+      RELATIONSHIP_MODULE_CONTRACT: ${{ secrets.RELATIONSHIP_MODULE_CONTRACT }}
+      LICENSING_MODULE_CONTRACT: ${{ secrets.LICENSING_MODULE_CONTRACT }}
+      COLLECT_MODULE_CONTRACT: ${{ secrets.COLLECT_MODULE_CONTRACT }}
+      RPC_PROVIDER_URL: ${{ secrets.RPC_PROVIDER_URL }}
+      WALLET_PRIVATE_KEY: ${{ secrets.WALLET_PRIVATE_KEY }}
