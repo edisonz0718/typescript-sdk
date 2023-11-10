@@ -13,7 +13,7 @@ on:
 jobs:
   build_and_test:
     uses: ./.github/workflows/build-and-test.yaml 
-    with:
+    secrets:
       api_base_url: ${{ secrets.API_BASE_URL }} 
       franchise_registry_contract: ${{ secrets.FRANCHISE_REGISTRY_CONTRACT }}
       relationship_module_contract: ${{ secrets.RELATIONSHIP_MODULE_CONTRACT }}

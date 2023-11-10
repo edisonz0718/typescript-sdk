@@ -14,5 +14,3 @@ jobs:
     steps:
       - name: Print message 
         run: echo "This is an external PR" 
-        
-
