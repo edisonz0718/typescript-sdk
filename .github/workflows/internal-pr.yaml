@@ -1,0 +1,15 @@
+name: Internal PR 
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build_and_test:
+    uses: ./.github/workflows/build-and-test.yaml 

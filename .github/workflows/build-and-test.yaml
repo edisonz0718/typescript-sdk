@@ -1,20 +1,14 @@
-name: Turbo CI
+name: Build and Test
 
 on:
-  push:
-    branches:
-      - main
-      - dev
-  pull_request:
-    branches:
-      - main
-      - dev
+  workflow_call:
 
 jobs:
   build:
     name: Build and Test
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     env:
       ## To use Remote Caching, uncomment the next lines and follow the steps below.
       # TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -31,7 +25,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
 
       - uses: pnpm/action-setup@v2.0.1
         with:

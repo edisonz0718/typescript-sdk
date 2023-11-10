@@ -1,0 +1,11 @@
+name: External PR Secure
+
+on:
+  workflow_run:
+    workflows: ["External PR Insecure"]
+    types:
+      - completed
+
+jobs:
+  build_and_test:
+    uses: ./.github/workflows/build-and-test.yaml 
