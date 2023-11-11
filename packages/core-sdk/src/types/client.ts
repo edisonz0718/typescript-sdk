@@ -28,3 +28,4 @@ export interface Client {
   ipAsset: IPAssetClient;
   relationship: RelationshipClient;
 }
+
