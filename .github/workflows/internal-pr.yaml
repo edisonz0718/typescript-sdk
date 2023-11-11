@@ -1,4 +1,4 @@
-name: Internal PR 
+name: "Internal PR"
 
 on:
   push:
